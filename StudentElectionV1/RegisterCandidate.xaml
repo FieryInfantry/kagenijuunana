@@ -1,0 +1,553 @@
+﻿<Window x:Class="StudentElectionV1.RegisterCandidate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentElectionV1"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent"
+        Title="RegisterCandidate" Height="900" Width="1200">
+    <Window.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="10" x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="RoundedButton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="50" x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>            
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#ff2c3e50"/>
+            <Setter Property="Height" Value="40" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="SemeRoundedButton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="10" x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border1}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Border CornerRadius="30" BorderThickness="5" >
+        <Border.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="white" Offset="0.75" />
+                <GradientStop Color="#2f6deb" Offset=".05" />
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="900"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="130"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.RowSpan="2"                  
+               CornerRadius="30"
+               x:Name="blueBorder"                  
+               Margin="20">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="white" Offset="0.05" />
+                        <GradientStop Color="#2f6deb" Offset=".95" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Margin="10">
+                        <TextBlock HorizontalAlignment="Left"
+                         Text="Last Name" FontFamily="Segoe UI Light"
+                         FontSize="18" Width="150"                            
+                         Margin="5"/>
+                        <TextBox Style="{DynamicResource TextBox}" Width="250"
+                              Height="35"
+                              x:Name="txtLastName"
+                              FontSize="25"
+                              FontWeight="Bold"
+                              Text="{Binding ElementName=candidateList, Path=SelectedItem.LASTNAME, Mode=OneWay}"
+                        />
+                        <TextBox Style="{DynamicResource TextBox}" Width="250"
+                              Height="35"
+                              x:Name="txtLastNameV"
+                              FontSize="25"
+                              FontWeight="Bold"
+                              Margin="0 -35 0 0"
+                              Visibility="Hidden"
+                              Text="{Binding ElementName=votersList, Path=SelectedItem.LASTNAME, Mode=OneWay}"
+                        />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Margin="10 0 0 10">
+                        <TextBlock HorizontalAlignment="Left"
+                            Text="First Name" FontFamily="Segoe UI Light"
+                            FontSize="18" Width="150"                            
+                            Margin="5"
+                         />   
+                        <TextBox Style="{DynamicResource TextBox}" Width="400"
+                            Height="35"
+                            x:Name="txtFirstName"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Text="{Binding ElementName=candidateList, Path=SelectedItem.FIRSTNAME, Mode=OneWay}"
+                        />
+                        <TextBox Style="{DynamicResource TextBox}" Width="400"
+                            Height="35"
+                            x:Name="txtFirstNameV"
+                            FontSize="25"
+                            FontWeight="Bold"
+                            Margin="0 -35 0 0"
+                            Visibility="Hidden"
+                            Text="{Binding ElementName=votersList, Path=SelectedItem.FIRSTNAME, Mode=OneWay}"
+                        />
+                    </StackPanel>
+                    
+                    <StackPanel HorizontalAlignment="Left" Margin="10 0 0 5">
+                            <TextBlock x:Name="errorMessage"
+                                        Foreground="Red"
+                                        Text="There was an error"
+                                        Margin="20 20 0 0"                                  
+                                        FontSize="25" FontWeight="Bold" 
+                                        Visibility="Hidden"
+                            />
+                    </StackPanel>
+
+                   
+                    <StackPanel Orientation="Horizontal" Margin="10 -60 10 10">
+                      <!-- Stack panel for Position-->
+                      <StackPanel Width="300" HorizontalAlignment="Left">
+                        <TextBlock Text="Position" FontSize="18" 
+                            FontFamily="Segoe UI Light"
+                            HorizontalAlignment="Left"                     
+                            Height="30"
+                        />
+                        <ComboBox Width="250" Height="35"
+                                x:Name="cmbPosition" HorizontalAlignment="Left"
+                                Text="{Binding ElementName=candidateList, Path=SelectedItem.POSITION, Mode=OneWay}"
+                                FontSize="20" FontWeight="Bold">
+                                <ComboBoxItem>Not Set</ComboBoxItem>
+                                <ComboBoxItem>Governor</ComboBoxItem>
+                                <ComboBoxItem>Vice-Governor</ComboBoxItem>
+                                <ComboBoxItem>Secretary</ComboBoxItem>
+                                <ComboBoxItem>Treasurer</ComboBoxItem>
+                                <ComboBoxItem>Auditor</ComboBoxItem>
+                                <ComboBoxItem>Bus. Mgr.</ComboBoxItem>
+                                <ComboBoxItem>PRO</ComboBoxItem>
+                                <ComboBoxItem>IT Rep</ComboBoxItem>
+                                <ComboBoxItem>ECE Rep</ComboBoxItem>
+                                <ComboBoxItem>CPE Rep</ComboBoxItem>
+                        </ComboBox>
+                      </StackPanel>
+                    
+                      <!-- Stack Panel for Party -->
+                      <StackPanel Width="200" HorizontalAlignment="Left" Height="80">
+                        <TextBlock Text="Party" FontSize="18" 
+                            FontFamily="Segoe UI Light"
+                            HorizontalAlignment="Left"                     
+                            Height="30"
+                        />
+                          
+                        <ComboBox Width="120" Height="35" 
+                            x:Name="cmbParty"                                                        
+                            Text="{Binding ElementName=candidateList, Path=SelectedItem.PARTY, Mode=OneWay}"
+                            HorizontalAlignment="Left" 
+                            FontSize="20" FontWeight="Bold">
+                            <ComboBoxItem>Not Set</ComboBoxItem>
+                            <ComboBoxItem>ALAB</ComboBoxItem>
+                            <ComboBoxItem>ALAWS</ComboBoxItem>
+                            <ComboBoxItem>IND</ComboBoxItem>
+                        </ComboBox>
+                      </StackPanel>                      
+                    </StackPanel>
+                    
+                    <!-- Label for Voter ID -->
+                    <TextBlock  x:Name="txtVoterID"
+                        FontSize="45" FontWeight="Bold"
+                        Width="70" Height="50"                        
+                        Margin="400 -400 0 20"
+                        Text="{Binding ElementName=votersList, Path=SelectedItem.ID, Mode=OneWay}"
+                        Visibility="Hidden"                        
+                    />
+                    
+                    <!-- Label for Candidate ID -->
+                    <TextBlock x:Name="txtCandidID"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        FontSize="45" FontWeight="Bold"
+                        Width="70" Height="50"                        
+                        Margin="20 -15 0 0"
+                        Text="{Binding ElementName=candidateList, Path=SelectedItem.ID, Mode=OneWay}"
+                    />
+                    <!-- Label for Candidate ID -->
+                    <TextBlock x:Name="txtVoterID2"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Left"
+                        FontSize="45" FontWeight="Bold"
+                        Width="70" Height="50"                        
+                        Margin="20 -15 0 0"
+                        Visibility="Hidden"
+                        Text="{Binding ElementName=candidateList, Path=SelectedItem.votersid, Mode=OneWay}"
+                    />
+                    <!-- This one is for the Candidacy withdraw question (hidden) -->
+                    <Border BorderBrush="Gray" BorderThickness="3"
+                            Width="300" Height="150"
+                            VerticalAlignment="Top" CornerRadius="10"
+                            HorizontalAlignment="Right"
+                            Margin="0 -230 20 0"
+                            x:Name="borderWithdraw"
+                            Visibility="Hidden"
+                            Background="White">
+                        <StackPanel>
+                            <TextBlock Text="Withdraw Candidacy?"
+                                FontSize="25" FontWeight="Bold"                                
+                                Margin="20 20 0 0"
+                                Height="40"
+                                VerticalAlignment="Top" 
+                            />
+                                <StackPanel Orientation="Horizontal" Margin="10 20 0 0">
+                                    <Button Style="{DynamicResource SemeRoundedButton}" 
+                                        Content="Confrim" Width="120" Height="35"
+                                        Foreground="White" Background="Green"
+                                        FontSize="18" FontWeight="Bold"
+                                        Margin="10 0 10 0" Cursor="Hand"
+                                        x:Name="btnConfirmWithdraw"
+                                        Click="btnConfirmWithdraw_Click"
+                                    />
+                                <Button Style="{DynamicResource SemeRoundedButton}"
+                                        Content="Cancel" Width="120" Height="35"
+                                        Foreground="White" Background="Red"
+                                        FontSize="18" FontWeight="Bold"
+                                        Margin="10 0 10 0" Cursor="Hand"
+                                        x:Name="btnCancelWithdraw"
+                                        Click="btnCancelWithdraw_Click"
+                                    />
+                                </StackPanel>
+                            
+                            </StackPanel>
+                        
+                        
+                    </Border>
+                    
+                </StackPanel>
+                
+            </Border>
+            
+            <Border Background="White" Grid.Row="3" 
+                 Grid.ColumnSpan="2" 
+                 Margin="20 10 20 0" 
+                 BorderThickness="3"
+                 BorderBrush="#000000"
+                 CornerRadius="10">
+                <StackPanel Orientation="Horizontal">
+                    
+                    <StackPanel Margin="20 5 40 0" x:Name="spFile">
+                        
+                        <Button Style="{DynamicResource RoundedButton}" 
+                             Width="80" Height="80" 
+                             BorderBrush="#2f6deb"
+                             BorderThickness="5"
+                             Background="Transparent"
+                             x:Name="btnAdd"
+                             Click="btnAdd_Click"
+                             Cursor="Hand">
+                            <Image Source="images/add-entry.png" Width="50" Height="50"/>
+                        </Button>
+                        
+                        <TextBlock Text="File Candidacy" 
+                                HorizontalAlignment="Center"
+                        />
+                    </StackPanel>
+                    <StackPanel Margin="20 5 40 0" x:Name="spEdit">
+                        <Button Style="{DynamicResource RoundedButton}"
+                             Width="80" Height="80" Background="Transparent"
+                             BorderBrush="#2f6deb"
+                             BorderThickness="5"
+                             Cursor="Hand"
+                             x:Name="btnUpdate">                            
+                            <Image Source="images/update-entry.png" Width="50" Height="50"/>
+                        </Button>
+                        
+                        <TextBlock Text="Edit Record"
+                                HorizontalAlignment="Center"
+                        />
+                    </StackPanel>
+                    <StackPanel Margin="20 5 40 0" x:Name="spWithdraw">
+                        <Button Style="{DynamicResource RoundedButton}"
+                             Width="80" Height="80" Background="Transparent"
+                             BorderBrush="#2f6deb"
+                             BorderThickness="5"
+                             Cursor="Hand"
+                             Click="btnWithdraw_Click"
+                             x:Name="btnWithdraw">                            
+                            <Image Source="images/withdraw.png" Width="50" Height="50"/>
+                        </Button>
+                        <TextBlock Text="Withdraw"
+                            HorizontalAlignment="Center"
+                        />
+                    </StackPanel>
+                    <StackPanel Margin="20 5 40 0"  x:Name="spSearch">
+                        <Button Style="{DynamicResource RoundedButton}"
+                             Width="80" Height="80" Background="Transparent"
+                             BorderBrush="#2f6deb"
+                             Cursor="Hand"
+                             BorderThickness="5">
+                            <Image Source="images/search-icon.png" Width="50" Height="50"/>
+                        </Button>
+                        <TextBlock Text="Search"
+                            HorizontalAlignment="Center"
+                        />
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Center"  x:Name="spSearchBox">
+                        <TextBlock Text="Search Criteria" 
+                                HorizontalAlignment="Center"
+                                Height="20"
+                        />
+                        <TextBox x:Name="txtSearch" Width="400" Height="35"                 
+                                 FontSize="20" FontWeight="Bold"
+                                 Style="{DynamicResource TextBox}"
+                                 BorderBrush="#2f6deb"          
+                        />
+                    </StackPanel>
+                    <StackPanel Margin="80 5 40 0" >
+                        <Button Style="{DynamicResource RoundedButton}"
+                             Width="80" Height="80" Background="Transparent"
+                             x:Name="btnExit" Click="btnExit_Click"
+                             BorderBrush="#2f6deb"
+                             Cursor="Hand"
+                             BorderThickness="5">
+                            <Image Source="images/exit.png" Width="50" Height="50"/>
+                        </Button>
+                        <TextBlock Text="Exit"
+                            HorizontalAlignment="Center"
+                     />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+            <DataGrid Grid.Row="2" Grid.ColumnSpan="2" Margin="20 10 20 10"
+                   x:Name="candidateList" Width="1150" 
+                   HorizontalAlignment="Left"
+                   HorizontalGridLinesBrush="Gray"
+                   VerticalGridLinesBrush="Gray"
+                   GridLinesVisibility="All"
+                   HeadersVisibility="All"
+                   CanUserReorderColumns="False"
+                   CanUserSortColumns="True"
+                   CanUserResizeColumns="True"
+                   IsReadOnly="True"
+                   FontSize="20"
+                   FontWeight="DemiBold"
+                   ColumnWidth="Auto"                      
+                   BorderBrush="#2f6deb"
+                   BorderThickness="3" 
+                   SelectionMode="Single"
+                   MouseLeftButtonDown="candidateList_MouseLeftButtonDown"
+            />
+            <DataGrid Grid.Row="0" Grid.Column="1" Margin="-170 40 10 10" Width="400"
+                  Height="650" Grid.RowSpan="3"
+                  x:Name="votersList"
+                  VerticalAlignment="Top"
+                  HorizontalGridLinesBrush="Gray"
+                  VerticalGridLinesBrush="Gray"
+                  GridLinesVisibility="All"
+                  HeadersVisibility="All"
+                  CanUserReorderColumns="False"
+                  CanUserSortColumns="True"
+                  CanUserResizeColumns="True"
+                  IsReadOnly="True"
+                  FontSize="20"
+                  FontWeight="DemiBold"
+                  ColumnWidth="Auto"                      
+                  BorderBrush="#2f6deb"
+                  BorderThickness="3"
+                  AlternatingRowBackground="#FFABD3F5"
+                  Visibility="Hidden"
+                  SelectionMode="Single"
+                  MouseDown="votersList_MouseDown"
+            />           
+
+            <TextBlock Text="Candidate registration"
+                    FontSize="25" Height="35"
+                    HorizontalAlignment="Center"
+                    Margin="0 -200 0 0"
+                    x:Name="txtCandidateText"
+                    Grid.Column="1"/>
+            <Image Grid.Column="1" Source="/images/candidate.png" 
+                Width="280" Height="350" 
+                Margin="-40 50 0 0" Grid.RowSpan="2"
+                x:Name="candLogo"
+            />
+
+
+            <Button Style="{DynamicResource SemeRoundedButton}"
+                    x:Name="btnSaveCand" Margin="-50 0 0 0" Grid.Column="1"
+                    VerticalAlignment="Bottom" Grid.Row="2"
+                    HorizontalAlignment="Left"
+                    Content="Save" Width="100" Height="35"
+                    FontSize="18" FontWeight="Bold" Foreground="White"
+                    Background="Green" Visibility="Hidden"
+                    Cursor="Hand"
+                    Click="btnSaveCand_Click"
+                />
+            <Button Style="{DynamicResource SemeRoundedButton}"
+                     x:Name="btnCancelCand" Margin="70 0 0 0" Grid.Column="1"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom"
+                     Grid.Row="2"
+                     Content="Cancel" Width="100" Height="35"
+                     FontSize="18" FontWeight="Bold" Foreground="White"
+                     Background="Red" Visibility="Hidden"
+                     Click="btnCancelCand_Click"
+                     Cursor="Hand"
+                />
+            
+        </Grid>
+    </Border>
+</Window>

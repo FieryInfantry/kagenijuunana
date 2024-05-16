@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|c:\\users\\alsymon\\downloads\\drive-download-20240515t162841z-001\\studentelectionv1\\votingproper.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|solutionrelative:studentelectionv1\\votingproper.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|c:\\users\\alsymon\\downloads\\drive-download-20240515t162841z-001\\studentelectionv1\\registercandidate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|solutionrelative:studentelectionv1\\registercandidate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|c:\\users\\alsymon\\downloads\\drive-download-20240515t162841z-001\\studentelectionv1\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|solutionrelative:studentelectionv1\\loginwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|c:\\users\\alsymon\\downloads\\drive-download-20240515t162841z-001\\studentelectionv1\\registervoter.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|solutionrelative:studentelectionv1\\registervoter.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|c:\\users\\alsymon\\downloads\\drive-download-20240515t162841z-001\\studentelectionv1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|solutionrelative:studentelectionv1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|c:\\users\\alsymon\\downloads\\drive-download-20240515t162841z-001\\studentelectionv1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B678AA4-050D-4EA1-9FE9-F173B5BD8DF5}|StudentElectionV1\\StudentElectionV1.csproj|solutionrelative:studentelectionv1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterCandidate.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\RegisterCandidate.xaml.cs",
+              "RelativeDocumentMoniker": "StudentElectionV1\\RegisterCandidate.xaml.cs",
+              "ToolTip": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\RegisterCandidate.xaml.cs",
+              "RelativeToolTip": "StudentElectionV1\\RegisterCandidate.xaml.cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAYwPYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T16:59:12.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\LoginWindow.xaml.cs",
+              "RelativeDocumentMoniker": "StudentElectionV1\\LoginWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\LoginWindow.xaml.cs",
+              "RelativeToolTip": "StudentElectionV1\\LoginWindow.xaml.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAgwEMAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T16:31:52.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VotingProper.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\VotingProper.xaml.cs",
+              "RelativeDocumentMoniker": "StudentElectionV1\\VotingProper.xaml.cs",
+              "ToolTip": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\VotingProper.xaml.cs",
+              "RelativeToolTip": "StudentElectionV1\\VotingProper.xaml.cs",
+              "ViewState": "AQIAAB0BAAAAAAAAAAAAABMBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T00:25:28.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterVoter.xaml",
+              "DocumentMoniker": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\RegisterVoter.xaml",
+              "RelativeDocumentMoniker": "StudentElectionV1\\RegisterVoter.xaml",
+              "ToolTip": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\RegisterVoter.xaml",
+              "RelativeToolTip": "StudentElectionV1\\RegisterVoter.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-19T03:59:29.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "StudentElectionV1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\MainWindow.xaml",
+              "RelativeToolTip": "StudentElectionV1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-19T03:59:29.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "StudentElectionV1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Alsymon\\Downloads\\drive-download-20240515T162841Z-001\\StudentElectionV1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "StudentElectionV1\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAADwv1MAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-19T03:59:29.95Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
